@@ -45,16 +45,41 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    if(numRows != 0) {
+    if(numRows == 0) {
+        numCols = 0;
+    } else{
         numRows--;
         let grid = document.querySelector("#grid");
         grid.removeChild(grid.lastElementChild);
+        if(numRows == 0) {
+            numCols = 0;
+        }
     };
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    if(numCols == 0) {
+        numRows = 0;
+    } else {
+        numCols--;
+        let grid = document.querySelector("#grid");
+        if(numRows != 0) {
+            //deletes last element of every tr.
+            for(let x = 0; x < numRows; x++) {
+                grid.children[x].removeChild(grid.children[x].lastElementChild);
+            };
+            //case if removeC clears the grid, empty tr's will be removed.
+            if(numCols == 0) {
+                for(let x = 0; x < numRows; x++) {
+                    grid.removeChild(grid.lastElementChild);
+                };
+            };
+        };
+        if(numCols == 0) {
+            numRows = 0;
+        }
+    };
 }
 
 // Set global variable for selected color
