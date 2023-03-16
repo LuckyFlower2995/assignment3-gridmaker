@@ -22,6 +22,14 @@ function addR() {
         };
         grid.appendChild(tr);
     };
+    
+    // Allows for box to be colored when color is selected.
+    let boxes = document.querySelectorAll('tr td');
+    for(let x = 0; x < boxes.length; x++) {
+        boxes[x].onclick = function() {
+            this.style.backgroundColor = colorSelected;
+        };
+    };
 }
 
 // Add a column
@@ -39,6 +47,14 @@ function addC() {
         for(let x = 0; x < numRows; x++) {
             let td = document.createElement('td');
             grid.children[x].append(td);
+        };
+    };
+
+    // Allows for box to be colored when color is selected.
+    let boxes = document.querySelectorAll('tr td');
+    for(let x = 0; x < boxes.length; x++) {
+        boxes[x].onclick = function() {
+            this.style.backgroundColor = colorSelected;
         };
     };
 }
@@ -65,11 +81,11 @@ function removeC() {
         numCols--;
         let grid = document.querySelector("#grid");
         if(numRows != 0) {
-            //deletes last element of every tr.
+            // Deletes last element of every tr.
             for(let x = 0; x < numRows; x++) {
                 grid.children[x].removeChild(grid.children[x].lastElementChild);
             };
-            //case if removeC clears the grid, empty tr's will be removed.
+            // Case if removeC clears the grid, empty tr's will be removed.
             if(numCols == 0) {
                 for(let x = 0; x < numRows; x++) {
                     grid.removeChild(grid.lastElementChild);
