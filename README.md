@@ -1,8 +1,10 @@
 # grid-maker-starter-code
-This repository is the starter code for Assignment 3 - Grid Maker.
+This repository is Assignment 3 - Grid Maker.
 
-### Live Link
-[Website link](https://johnnylaicode.github.io/grid-maker-starter-code/)
+Group Members: Stephanie Lam (LuckyFlower2995)
+
+### Link to Website
+[Website link](https://luckyflower2995.github.io/assignment3-gridmaker/)
 
 ----------
 ### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as the starter codebase
