@@ -117,7 +117,11 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    colorSelected = document.getElementById("selectedColorId").value;
+    let boxes = document.querySelectorAll('tr td');
+    for(let x = 0; x < boxes.length; x++) {
+        boxes[x].style.backgroundColor = colorSelected;
+    };
 }
 
 // Clear all cells
