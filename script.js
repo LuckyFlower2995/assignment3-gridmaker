@@ -27,7 +27,7 @@ function addR() {
     let boxes = document.querySelectorAll('tr td');
     for(let x = 0; x < boxes.length; x++) {
         boxes[x].onclick = function() {
-            this.style.backgroundColor = colorSelected;
+            boxes[x].style.backgroundColor = colorSelected;
         };
     };
 }
@@ -54,7 +54,7 @@ function addC() {
     let boxes = document.querySelectorAll('tr td');
     for(let x = 0; x < boxes.length; x++) {
         boxes[x].onclick = function() {
-            this.style.backgroundColor = colorSelected;
+            boxes[x].style.backgroundColor = colorSelected;
         };
     };
 }
@@ -69,7 +69,7 @@ function removeR() {
         grid.removeChild(grid.lastElementChild);
         if(numRows == 0) {
             numCols = 0;
-        }
+        };
     };
 }
 
@@ -94,7 +94,7 @@ function removeC() {
         };
         if(numCols == 0) {
             numRows = 0;
-        }
+        };
     };
 }
 
@@ -106,7 +106,13 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    colorSelected = document.getElementById("selectedColorId").value;
+    let boxes = document.querySelectorAll('tr td');
+    for(let x = 0; x < boxes.length; x++) {
+        if(boxes[x].style.backgroundColor == "") {
+            boxes[x].style.backgroundColor = colorSelected;
+        };
+    };
 }
 
 // Fill all cells
